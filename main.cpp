@@ -17,8 +17,6 @@ int main(int argc, char* argv[]) {
 	if constexpr (A<=2*R)
 		return 0;
 
-    QList<Figure*> figures;
-
     CircleConfig circleConfig{};
     circleConfig.radius=R;
     circleConfig.visible=VISIBLE;
@@ -44,6 +42,8 @@ int main(int argc, char* argv[]) {
 
     circle->hide();
     triangle->move(DEFAULT_VALUE,DEFAULT_VALUE);
+
+	QList<Figure*> figures;
 
     figures.push_back(new Circle(*circle));
     figures.push_back(new IsoscelesTriangle(*triangle));
