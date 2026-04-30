@@ -14,5 +14,6 @@ protected:
 	double radius{};
 public:
 	explicit Circle(const CircleConfig& config);
+	[[nodiscard]] double getRadius() const;
 	void draw(QPainter& painter) const override;
 };

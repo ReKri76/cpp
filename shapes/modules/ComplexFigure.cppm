@@ -24,5 +24,7 @@ public:
 	void  move(double dx, double dy) override;
 
 	explicit ComplexFigure(const ComplexFigureConfig& config);
+	[[nodiscard]]IsoscelesTriangle* getIsoscelesTriangle() const;
+	[[nodiscard]]Circle* getCircle() const;
 	void draw(QPainter& painter) const override;
 };

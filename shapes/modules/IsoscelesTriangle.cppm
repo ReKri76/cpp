@@ -18,5 +18,6 @@ protected:
 	double r{};
 public:
 	explicit IsoscelesTriangle(const IsoscelesTriangleConfig& config);
+	[[nodiscard]] double getHeightOfTriangle() const;
 	void draw(QPainter& painter) const override;
 };

@@ -33,3 +33,6 @@ void ComplexFigure::move(const double dx, const double dy)
     circle->move(dx, dy);
     triangle->move(dx, dy);
 }
+
+IsoscelesTriangle* ComplexFigure::getIsoscelesTriangle() const {return triangle;}
+Circle* ComplexFigure::getCircle() const {return circle;}

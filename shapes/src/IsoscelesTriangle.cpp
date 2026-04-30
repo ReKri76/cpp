@@ -11,7 +11,7 @@ r(
 	/(2*std::sqrt(std::pow(a/2,2)+std::pow(heightOfTriangle,2))+a)
 	)
 { }
-
+double IsoscelesTriangle::getHeightOfTriangle() const {return heightOfTriangle;};
 void IsoscelesTriangle::draw(QPainter& painter) const {
 	const QPolygonF triangle ={
 		QPointF(x + heightOfTriangle-r, y),
