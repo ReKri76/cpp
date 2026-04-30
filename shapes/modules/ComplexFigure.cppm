@@ -27,4 +27,5 @@ public:
 	[[nodiscard]]IsoscelesTriangle* getIsoscelesTriangle() const;
 	[[nodiscard]]Circle* getCircle() const;
 	void draw(QPainter& painter) const override;
+	~ComplexFigure() override;
 };

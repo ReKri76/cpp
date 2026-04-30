@@ -31,12 +31,7 @@
   <component name="ChangeListManager">
     <list default="true" id="09d9e78f-11a8-435f-ac46-6fc973bb8fb5" name="Changes" comment="master">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shapes/modules/Circle.cppm" beforeDir="false" afterPath="$PROJECT_DIR$/shapes/modules/Circle.cppm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shapes/modules/ComplexFigure.cppm" beforeDir="false" afterPath="$PROJECT_DIR$/shapes/modules/ComplexFigure.cppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shapes/modules/IsoscelesTriangle.cppm" beforeDir="false" afterPath="$PROJECT_DIR$/shapes/modules/IsoscelesTriangle.cppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shapes/src/Circle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/shapes/src/Circle.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shapes/src/ComplexFigure.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/shapes/src/ComplexFigure.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shapes/src/IsoscelesTriangle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/shapes/src/IsoscelesTriangle.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +122,7 @@
       <recent name="$PROJECT_DIR$/shape/src" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.unit_tests">
+  <component name="RunManager" selected="CMake Application.cpp">
     <configuration name="cpp" type="CMakeListConfigurationType" factoryName="CMakeListConfigurationFactory" temporary="true">
       <method v="2" />
     </configuration>
@@ -182,7 +177,7 @@
       <workItem from="1777533574819" duration="92000" />
       <workItem from="1777533685714" duration="145000" />
       <workItem from="1777533832663" duration="410000" />
-      <workItem from="1777534310568" duration="1377000" />
+      <workItem from="1777534310568" duration="2032000" />
     </task>
     <task id="LOCAL-00001" summary="master">
       <option name="closed" value="true" />
@@ -208,7 +203,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777533866985</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="master">
+      <option name="closed" value="true" />
+      <created>1777535902975</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1777535902975</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
