@@ -15,7 +15,7 @@ int main(int argc, char* argv[]) {
     QApplication app(argc, argv);
 
 	if constexpr (A<=2*R)
-		return 0;
+		return DEFAULT_VALUE;
 
     CircleConfig circleConfig{};
     circleConfig.radius=R;
