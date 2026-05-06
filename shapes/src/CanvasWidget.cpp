@@ -6,15 +6,26 @@ module Shapes;
 
 void CanvasWidget::paintEvent(QPaintEvent *event)
 {
+	if (shapes->empty())
+		throw std::runtime_error("Have not shapes to draw");
+
 	QPainter painter(this);
 
-	for (auto& shape : shapes)
+	for (const auto& shape : *shapes)
 	{
-		if (shape && shape->isVisible())
+		if (shape!=nullptr && shape->isVisible())
 			shape->draw(painter);
 	}
 }
 
-CanvasWidget::CanvasWidget(const QList<Figure*>& shapes, QWidget *parent):
-	QWidget(parent), shapes(shapes)
+CanvasWidget::CanvasWidget(QWidget *parent) : QWidget(parent), shapes(new QList<Figure*>())
 { }
+void CanvasWidget::push_top(Figure* figure) {shapes->push_front(figure);}
+Figure* CanvasWidget::put_top() const {return shapes->back();}
+void CanvasWidget::push_back(Figure* figure) {shapes->push_back(figure);}
+Figure* CanvasWidget::put_back() const {return shapes->back();}
+
+CanvasWidget::~CanvasWidget()
+{
+	delete shapes;
+}

@@ -1,3 +1,4 @@
+//Чамкин Антон; 25Вп3; Курсовой проект; Сложная фигура - равнобедренный треугольник, окружность
 #include <QApplication>
 import Shapes;
 
@@ -14,8 +15,8 @@ constexpr double HEIGHT_OF_TRIANGLE = (2*A*A*R)/(A*A-4*R*R);
 int main(int argc, char* argv[]) {
     QApplication app(argc, argv);
 
-	if constexpr (A<=2*R)
-		return DEFAULT_VALUE;
+	if constexpr (HEIGHT_OF_TRIANGLE<=0)
+		throw std::runtime_error("Высота треугольника не может быть не не отрицательной");
 
     CircleConfig circleConfig{};
     circleConfig.radius=R;
@@ -43,14 +44,13 @@ int main(int argc, char* argv[]) {
     circle->hide();
     triangle->move(DEFAULT_VALUE,DEFAULT_VALUE);
 
-	QList<Figure*> figures;
+	CanvasWidget* canvas_widget = new CanvasWidget();
 
-    figures.push_back(new Circle(*circle));
-    figures.push_back(new IsoscelesTriangle(*triangle));
-    figures.push_back(new ComplexFigure(*complex));
+    canvas_widget->push_back(new Circle(*circle));
+    canvas_widget->push_back(new IsoscelesTriangle(*triangle));
+    canvas_widget->push_back(new ComplexFigure(*complex));
 
-    CanvasWidget canvas_widget(figures);
-	canvas_widget.show();
+	canvas_widget->show();
 
     return QApplication::exec();
 }

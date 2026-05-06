@@ -5,10 +5,16 @@ import :Figure;
 
 export class CanvasWidget : public QWidget {
 private:
-	const QList<Figure*>& shapes;
+	QList<Figure *> *shapes;
 
 public:
-	explicit CanvasWidget(const QList<Figure*>& shapes, QWidget *parent = nullptr);
+	explicit CanvasWidget(QWidget *parent = nullptr);
+	void push_top(Figure* figure);
+	[[nodiscard]] Figure* put_top() const;
+	void push_back(Figure* figure);
+	[[nodiscard]] Figure* put_back() const;
+
+	~CanvasWidget() override;
 
 protected:
 	void paintEvent(QPaintEvent *event) override;

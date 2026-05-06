@@ -7,7 +7,6 @@ export struct IsoscelesTriangleConfig: FigureConfig
 {
 	double heightOfTriangle;
 	double a;
-
 };
 
 export class IsoscelesTriangle : public Figure

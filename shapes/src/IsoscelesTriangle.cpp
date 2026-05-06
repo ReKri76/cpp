@@ -12,11 +12,14 @@ r(
 	)
 { }
 double IsoscelesTriangle::getHeightOfTriangle() const {return heightOfTriangle;};
-void IsoscelesTriangle::draw(QPainter& painter) const {
-	const QPolygonF triangle ={
+void IsoscelesTriangle::draw(QPainter& painter) const 
+{
+	const QPolygonF triangle
+	{
 		QPointF(x + heightOfTriangle-r, y),
 		QPointF(x - r, y+a/2),
 		QPointF(x - r, y-a/2)
 	};
+
     painter.drawPolygon(triangle);
 }

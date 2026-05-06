@@ -28,5 +28,6 @@ public:
 	void virtual move(double dx, double dy);
 
 	virtual void draw(QPainter& painter) const = 0;
+
 	virtual ~Figure() noexcept = default;
 };
