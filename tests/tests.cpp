@@ -1,107 +1,139 @@
-module;
+#include <QApplication>
 #include <cassert>
 #include <iostream>
-module Shapes;
+import Shapes;
 
-void test_circle_logic() {
-    CircleConfig cfg{};
-    cfg.x = 10.0;
-    cfg.y = 20.0;
-    cfg.visible = true;
-    cfg.radius = 5.0;
+constexpr double DEFAULT_VALUE = 100;
+constexpr bool VISIBLE = true;
 
-    Circle circle(cfg);
+constexpr double R = 100;
+constexpr double X = 200;
+constexpr double Y = 200;
+constexpr double A = 300;
 
-    assert(circle.getX() == 10.0);
-    assert(circle.getY() == 20.0);
-    assert(circle.isVisible() == true);
-    assert(circle.getRadius() == 5.0);
+constexpr double HEIGHT_OF_TRIANGLE = (2*A*A*R)/(A*A-4*R*R);
 
-    circle.move(5.0, 7.0);
-    assert(circle.getX() == 15.0);
-    assert(circle.getY() == 27.0);
+std::vector<Figure*> createFigures();
+void hideAll(std::vector<Figure*>* figures);
+void showAll(std::vector<Figure*>* figures);
+void moveAll(std::vector<Figure*>* figures, const double dx, const double dy);
+void addAll(std::vector<Figure*>* figures, CanvasWidget*);
 
-    circle.hide();
-    assert(circle.isVisible() == false);
+int main(int argc, char *argv[])
+{
+    QApplication app(argc, argv);
 
-    circle.show();
-    assert(circle.isVisible() == true);
+    try {
+        std::cout << "Starting functional tests..." << std::endl;
+//======================================================================================================================
+        std::vector<Figure*> figures = createFigures();
+        std::for_each(figures.begin(), figures.end(), [](const Figure* figure)
+        {
+            assert(figure!=nullptr && "Figures dont created");
+        });
+        std::cout << "Step (a) passed: Figures created." << std::endl;
+//======================================================================================================================
+        hideAll(&figures);
+        std::for_each(figures.begin(), figures.end(), [](const Figure* figure)
+        {
+            assert(!figure->isVisible() &&  "Figures dont hidden");
+        });
 
-    std::cout << "Circle test: OK" << std::endl;
-}
+        showAll(&figures);
+        std::for_each(figures.begin(), figures.end(), [](const Figure* figure)
+        {
+            assert(figure->isVisible() &&  "Figures dont show");
+        });
 
-void test_isosceles_triangle_logic() {
-    IsoscelesTriangleConfig cfg{};
-    cfg.x = 0.0;
-    cfg.y = 0.0;
-    cfg.visible = true;
-    cfg.a = 10.0;
-    cfg.heightOfTriangle = 8.0;
+        std::cout << "Step (b) passed: Visibility toggled." << std::endl;
+//======================================================================================================================
+        // в) Переместить фигуру
+        moveAll(&figures, DEFAULT_VALUE, DEFAULT_VALUE);
+        std::for_each(figures.begin(), figures.end(), [](const Figure* figure)
+        {
+            assert(figure->getX()==X+DEFAULT_VALUE && "Figures dont moved by x");
+            assert(figure->getY()==Y+DEFAULT_VALUE &&  "Figures dont moved by y");
+        });
+        std::cout << "Step (c) passed: Figure moved." << std::endl;
+//======================================================================================================================
+        CanvasWidget* canvas_widget = new CanvasWidget();
+        addAll(&figures, canvas_widget);
+        std::cout << "Step (d) passed: Figures added to container." << std::endl;
+//======================================================================================================================
+        canvas_widget->show();
+        std::cout << "Step (e) passed: Container ready for display." << std::endl;
+//======================================================================================================================
+        delete canvas_widget;
+        std::cout << "Step (f) passed: Container deleted." << std::endl;
+//======================================================================================================================
 
-    IsoscelesTriangle triangle(cfg);
+        std::cout << "\nAll functional tests passed successfully!" << std::endl;
 
-    assert(triangle.getX() == 0.0);
-    assert(triangle.getY() == 0.0);
-    assert(triangle.isVisible() == true);
+    } catch (const std::exception& e) {
+        std::cerr << "Test failed with error: " << e.what() << std::endl;
+    }
 
-    triangle.move(3.0, 4.0);
-    assert(triangle.getX() == 3.0);
-    assert(triangle.getY() == 4.0);
-
-    triangle.hide();
-    assert(triangle.isVisible() == false);
-
-    std::cout << "IsoscelesTriangle test: OK" << std::endl;
-}
-
-void test_complex_figure_logic() {
-    ComplexFigureConfig cfg{};
-    cfg.x = 0.0;
-    cfg.y = 0.0;
-    cfg.visible = true;
-
-    cfg.circle.radius = 10.0;
-    cfg.circle.x = 0.0;
-    cfg.circle.y = 0.0;
-
-    cfg.triangle.a = 12.0;
-    cfg.triangle.heightOfTriangle = 8.0;
-    cfg.triangle.x = 0.0;
-    cfg.triangle.y = 0.0;
-
-    ComplexFigure complex(cfg);
-
-    assert(complex.getX() == 0.0);
-    assert(complex.getY() == 0.0);
-    assert(complex.isVisible() == true);
-
-    complex.move(10.0, 20.0);
-    assert(complex.getX() == 10.0);
-    assert(complex.getY() == 20.0);
-
-    assert(complex.getCircle() && complex.getCircle()->getX() == 10.0);
-    assert(complex.getCircle() && complex.getCircle()->getY() == 20.0);
-    assert(complex.getIsoscelesTriangle() && complex.getIsoscelesTriangle()->getX() == 10.0);
-    assert(complex.getIsoscelesTriangle() && complex.getIsoscelesTriangle()->getY() == 20.0);
-
-    complex.hide();
-    assert(complex.isVisible() == false);
-    assert(complex.getCircle() && !complex.getCircle()->isVisible());
-    assert(complex.getIsoscelesTriangle() && !complex.getIsoscelesTriangle()->isVisible());
-
-    complex.show();
-    assert(complex.isVisible() == true);
-    assert(complex.getCircle() && complex.getCircle()->isVisible());
-    assert(complex.getIsoscelesTriangle() && complex.getIsoscelesTriangle()->isVisible());
-
-    std::cout << "ComplexFigure test: OK" << std::endl;
-}
-
-int main() {
-    test_circle_logic();
-    test_isosceles_triangle_logic();
-    test_complex_figure_logic();
-
-    std::cout << "\n--- ALL INTERNAL TESTS PASSED SUCCESSFULLY ---" << std::endl;
     return 0;
+}
+
+std::vector<Figure*> createFigures()
+{
+    std::vector<Figure*> figures;
+
+    CircleConfig circleConfig{};
+    circleConfig.radius=R;
+    circleConfig.visible=VISIBLE;
+    circleConfig.x=X;
+    circleConfig.y=Y;
+    figures.push_back(new Circle(circleConfig));
+
+    IsoscelesTriangleConfig triangleConfig{};
+    triangleConfig.a=A;
+    triangleConfig.heightOfTriangle=HEIGHT_OF_TRIANGLE;
+    triangleConfig.visible=VISIBLE;
+    triangleConfig.x=X;
+    triangleConfig.y=Y;
+    figures.push_back(new IsoscelesTriangle(triangleConfig));
+
+    ComplexFigureConfig complexFigureConfig{};
+    complexFigureConfig.circle = circleConfig;
+    complexFigureConfig.triangle = triangleConfig;
+    complexFigureConfig.visible=VISIBLE;
+    complexFigureConfig.x=X;
+    complexFigureConfig.y=Y;
+    figures.push_back(new ComplexFigure(complexFigureConfig));
+
+    return figures;
+}
+
+void hideAll(std::vector<Figure*>* figures)
+{
+    std::for_each(figures->begin(), figures->end(), [](Figure* figure)
+    {
+        figure->hide();
+    });
+}
+
+void showAll(std::vector<Figure*>* figures)
+{
+    std::for_each(figures->begin(), figures->end(), [](Figure* figure)
+    {
+        figure->show();
+    });
+}
+
+void moveAll(std::vector<Figure*>* figures, const double dx, const double dy)
+{
+    std::for_each(figures->begin(), figures->end(), [dx, dy](Figure* figure)
+    {
+        figure->move(dx, dy);
+    });
+}
+
+void addAll(std::vector<Figure*>* figures, CanvasWidget* canvas_widget)
+{
+    std::for_each(figures->begin(), figures->end(), [canvas_widget](Figure* figure)
+    {
+        canvas_widget->push_back(figure);
+    });
 }

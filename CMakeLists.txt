@@ -36,5 +36,6 @@ target_link_libraries(ShapesLibrary PUBLIC Qt6::Core Qt6::Gui Qt6::Widgets)
 add_executable(cpp main.cpp)
 target_link_libraries(cpp PRIVATE ShapesLibrary)
 
-add_executable(unit_tests tests/tests.cpp)
+add_executable(unit_tests tests/tests.cpp
+)
 target_link_libraries(unit_tests PRIVATE ShapesLibrary)

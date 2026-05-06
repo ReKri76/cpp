@@ -27,5 +27,6 @@ Figure* CanvasWidget::put_back() const {return shapes->back();}
 
 CanvasWidget::~CanvasWidget()
 {
+	std::for_each(shapes->begin(), shapes->end(), [](Figure* figure){delete figure;});
 	delete shapes;
 }
