@@ -30,24 +30,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="09d9e78f-11a8-435f-ac46-6fc973bb8fb5" name="Changes" comment="master">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shapes/Shapes.cppm" beforeDir="false" afterPath="$PROJECT_DIR$/shapes/Shapes.cppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shapes/modules/CanvasWidget.cppm" beforeDir="false" afterPath="$PROJECT_DIR$/shapes/modules/CanvasWidget.cppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shapes/modules/Circle.cppm" beforeDir="false" afterPath="$PROJECT_DIR$/shapes/modules/Circle.cppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shapes/modules/ComplexFigure.cppm" beforeDir="false" afterPath="$PROJECT_DIR$/shapes/modules/ComplexFigure.cppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shapes/modules/Figure.cppm" beforeDir="false" afterPath="$PROJECT_DIR$/shapes/modules/Figure.cppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shapes/modules/IsoscelesTriangle.cppm" beforeDir="false" afterPath="$PROJECT_DIR$/shapes/modules/IsoscelesTriangle.cppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shapes/src/CanvasWidget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/shapes/src/CanvasWidget.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shapes/src/Circle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/shapes/src/Circle.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shapes/src/ComplexFigure.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/shapes/src/ComplexFigure.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shapes/src/Figure.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/shapes/src/Figure.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shapes/src/IsoscelesTriangle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/shapes/src/IsoscelesTriangle.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +182,7 @@
       <workItem from="1777533832663" duration="410000" />
       <workItem from="1777534310568" duration="2451000" />
       <workItem from="1777546204326" duration="3601000" />
-      <workItem from="1778079356523" duration="7855000" />
+      <workItem from="1778079356523" duration="8777000" />
     </task>
     <task id="LOCAL-00001" summary="master">
       <option name="closed" value="true" />
@@ -238,7 +224,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777536497226</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="master">
+      <option name="closed" value="true" />
+      <created>1778087628061</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1778087628062</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

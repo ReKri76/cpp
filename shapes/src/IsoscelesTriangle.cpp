@@ -6,11 +6,16 @@ module Shapes;
 
 IsoscelesTriangle::IsoscelesTriangle(const IsoscelesTriangleConfig& config):
 Figure(config), heightOfTriangle(config.heightOfTriangle), a(config.a),
-r(
-	(a*heightOfTriangle)
-	/(2*std::sqrt(std::pow(a/2,2)+std::pow(heightOfTriangle,2))+a)
+	r
+	(
+		(a*heightOfTriangle)
+		/(2*std::sqrt(std::pow(a/2,2)+std::pow(heightOfTriangle,2))+a)
 	)
-{ }
+{
+	if (a<=0 || heightOfTriangle<=0)
+		throw std::invalid_argument{"invalid argument"};
+}
+
 double IsoscelesTriangle::getHeightOfTriangle() const {return heightOfTriangle;};
 void IsoscelesTriangle::draw(QPainter& painter) const 
 {
