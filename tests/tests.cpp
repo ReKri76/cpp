@@ -18,6 +18,7 @@ void hideAll(std::vector<Figure*>* figures);
 void showAll(std::vector<Figure*>* figures);
 void moveAll(std::vector<Figure*>* figures, const double dx, const double dy);
 void addAll(std::vector<Figure*>* figures, CanvasWidget*);
+bool negativeCreation();
 
 int main(int argc, char *argv[])
 {
@@ -31,6 +32,7 @@ int main(int argc, char *argv[])
         {
             assert(figure!=nullptr && "Figures dont created");
         });
+        assert(negativeCreation());
         std::cout << "Step (a) passed: Figures created." << std::endl;
 //======================================================================================================================
         hideAll(&figures);
@@ -47,7 +49,6 @@ int main(int argc, char *argv[])
 
         std::cout << "Step (b) passed: Visibility toggled." << std::endl;
 //======================================================================================================================
-        // в) Переместить фигуру
         moveAll(&figures, DEFAULT_VALUE, DEFAULT_VALUE);
         std::for_each(figures.begin(), figures.end(), [](const Figure* figure)
         {
@@ -136,4 +137,54 @@ void addAll(std::vector<Figure*>* figures, CanvasWidget* canvas_widget)
     {
         canvas_widget->push_back(figure);
     });
+}
+
+bool negativeCreation()
+{
+    bool f1=false;
+    bool f2=false;
+    bool f3=false;
+
+    CircleConfig circleConfig{};
+    circleConfig.radius=-R;
+    circleConfig.visible=VISIBLE;
+    circleConfig.x=X;
+    circleConfig.y=Y;
+    try
+    {
+        Circle* circle = new Circle(circleConfig);
+    } catch (std::invalid_argument& e)
+    {
+        f1=true;
+    }
+
+    IsoscelesTriangleConfig triangleConfig{};
+    triangleConfig.a=-A;
+    triangleConfig.heightOfTriangle=HEIGHT_OF_TRIANGLE;
+    triangleConfig.visible=VISIBLE;
+    triangleConfig.x=X;
+    triangleConfig.y=Y;
+    try
+    {
+        IsoscelesTriangle* isoscelesTriangle = new IsoscelesTriangle(triangleConfig);
+    } catch (std::invalid_argument& e)
+    {
+        f2=true;
+    }
+
+    ComplexFigureConfig complexFigureConfig{};
+    complexFigureConfig.circle = circleConfig;
+    complexFigureConfig.triangle = triangleConfig;
+    complexFigureConfig.visible=VISIBLE;
+    complexFigureConfig.x=-X;
+    complexFigureConfig.y=-Y;
+    try
+    {
+        ComplexFigure* complexFigure = new ComplexFigure(complexFigureConfig);
+    } catch (std::invalid_argument& e)
+    {
+        f3=true;
+    }
+
+    return f1 && f2 && f3;
 }

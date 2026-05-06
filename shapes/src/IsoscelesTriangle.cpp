@@ -12,7 +12,7 @@ Figure(config), heightOfTriangle(config.heightOfTriangle), a(config.a),
 		/(2*std::sqrt(std::pow(a/2,2)+std::pow(heightOfTriangle,2))+a)
 	)
 {
-	if (a<=0 || heightOfTriangle<=0)
+	if (heightOfTriangle<=0 || a<=0 || x <= r || x+heightOfTriangle-r<=0 || y-a/2<=0)
 		throw std::invalid_argument{"invalid argument"};
 }
 

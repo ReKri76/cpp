@@ -5,7 +5,7 @@ module Shapes;
 
 Circle::Circle(const CircleConfig& config) : Figure(config), radius(config.radius)
 {
-	if (radius<=0)
+	if (radius<=0 || radius > x || radius > y)
 		throw std::invalid_argument{"invalid argument"};
 }
 
