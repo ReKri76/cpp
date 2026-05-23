@@ -1,7 +1,7 @@
 module;
 #include <QPainter>
-#include <QList>
 #include<QWidget>
+#include<queue>
 module Shapes;
 
 void CanvasWidget::paintEvent(QPaintEvent *event)
@@ -11,22 +11,30 @@ void CanvasWidget::paintEvent(QPaintEvent *event)
 
 	QPainter painter(this);
 
-	for (const auto& shape : *shapes)
+	std::queue<Figure*> tempQueue = *shapes;
+
+	while (!tempQueue.empty())
 	{
-		if (shape!=nullptr && shape->isVisible())
+		auto shape = tempQueue.front();
+		if (shape != nullptr && shape->isVisible())
+		{
 			shape->draw(painter);
+		}
+		tempQueue.pop();
 	}
 }
 
-CanvasWidget::CanvasWidget(QWidget *parent) : QWidget(parent), shapes(new QList<Figure*>())
+CanvasWidget::CanvasWidget(QWidget *parent) : QWidget(parent), shapes(new std::queue<Figure*>())
 { }
-void CanvasWidget::push_top(Figure* figure) {shapes->push_front(figure);}
-Figure* CanvasWidget::put_top() const {return shapes->back();}
-void CanvasWidget::push_back(Figure* figure) {shapes->push_back(figure);}
-Figure* CanvasWidget::put_back() const {return shapes->back();}
+void CanvasWidget::push(Figure* figure) const {shapes->push(figure);}
+Figure* CanvasWidget::get() const {return shapes->front();}
 
 CanvasWidget::~CanvasWidget()
 {
-	std::for_each(shapes->begin(), shapes->end(), [](Figure* figure){delete figure;});
+	while (!shapes->empty())
+	{
+		delete shapes->front();
+		shapes->pop();
+	}
 	delete shapes;
 }

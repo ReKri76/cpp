@@ -135,7 +135,7 @@ void addAll(std::vector<Figure*>* figures, CanvasWidget* canvas_widget)
 {
     std::for_each(figures->begin(), figures->end(), [canvas_widget](Figure* figure)
     {
-        canvas_widget->push_back(figure);
+        canvas_widget->push(figure);
     });
 }
 

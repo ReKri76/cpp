@@ -46,9 +46,9 @@ int main(int argc, char* argv[]) {
 
 	CanvasWidget* canvas_widget = new CanvasWidget();
 
-    canvas_widget->push_back(new Circle(*circle));
-    canvas_widget->push_back(new IsoscelesTriangle(*triangle));
-    canvas_widget->push_back(new ComplexFigure(*complex));
+    canvas_widget->push(new Circle(*circle));
+    canvas_widget->push(new IsoscelesTriangle(*triangle));
+    canvas_widget->push(new ComplexFigure(*complex));
 
 	canvas_widget->show();
 
