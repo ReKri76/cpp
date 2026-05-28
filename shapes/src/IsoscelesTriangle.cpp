@@ -13,7 +13,7 @@ Figure(config), heightOfTriangle(config.heightOfTriangle), a(config.a),
 	)
 {
 	if (heightOfTriangle<=0 || a<=0 || x <= r || x+heightOfTriangle-r<=0 || y-a/2<=0)
-		throw std::invalid_argument{"invalid argument"};
+		throw std::invalid_argument{"invalid argument for triangle"};
 }
 
 double IsoscelesTriangle::getHeightOfTriangle() const {return heightOfTriangle;};

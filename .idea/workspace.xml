@@ -32,9 +32,9 @@
     <list default="true" id="09d9e78f-11a8-435f-ac46-6fc973bb8fb5" name="Changes" comment="master">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shapes/modules/CanvasWidget.cppm" beforeDir="false" afterPath="$PROJECT_DIR$/shapes/modules/CanvasWidget.cppm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shapes/src/CanvasWidget.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/shapes/src/CanvasWidget.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/tests.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/tests/tests.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shapes/src/Circle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/shapes/src/Circle.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shapes/src/Figure.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/shapes/src/Figure.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shapes/src/IsoscelesTriangle.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/shapes/src/IsoscelesTriangle.cpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +45,7 @@
     <option name="formatViaClangd" value="false" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="121" />
+    <option name="cachedIndexableFilesCount" value="120" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
@@ -91,7 +91,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "CMake Application.ShapesLibrary.executor": "Run",
-    "CMake Application.cpp.executor": "Run",
+    "CMake Application.cpp.executor": "Debug",
     "CMake Application.unit_tests.executor": "Run",
     "CMake Debug.cpp.executor": "Debug",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
@@ -135,11 +135,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="cpp" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="cpp" TARGET_NAME="cpp" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="cpp" RUN_TARGET_NAME="cpp">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -151,8 +146,8 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="CMake Application.cpp" />
       <item itemvalue="CMake Application.ShapesLibrary" />
+      <item itemvalue="CMake Application.cpp" />
       <item itemvalue="CMake Application.unit_tests" />
       <item itemvalue="CMake Debug.cpp" />
     </list>
@@ -185,7 +180,11 @@
       <workItem from="1777546204326" duration="3601000" />
       <workItem from="1778079356523" duration="14053000" />
       <workItem from="1778098753768" duration="2220000" />
-      <workItem from="1779531657445" duration="1061000" />
+      <workItem from="1779531657445" duration="6495000" />
+      <workItem from="1779614110870" duration="42000" />
+      <workItem from="1779615997321" duration="3000" />
+      <workItem from="1779990866399" duration="125000" />
+      <workItem from="1779994441824" duration="536000" />
     </task>
     <task id="LOCAL-00001" summary="master">
       <option name="closed" value="true" />
@@ -259,7 +258,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778100953867</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="master">
+      <option name="closed" value="true" />
+      <created>1779533002968</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1779533002968</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
